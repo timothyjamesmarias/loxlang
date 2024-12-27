@@ -8,5 +8,16 @@ class Test {
     }
 }
 
-var test = Test("stinkyyyy");
+class Test2 < Test {
+    printFart() {
+        print "farts lol";
+    }
+
+    printFart2() {
+        super.printFart();
+    }
+}
+
+var test = Test2("asdfasdf");
 test.printFart();
+test.printFart2();
