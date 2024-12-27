@@ -1,9 +1,12 @@
-var a = "a";
-fun function() {
-    var a = "b";
-    print a;
+class Test {
+    init(farts) {
+        this.farts = farts;
+    }
+
+    printFart() {
+        print this.farts;
+    }
 }
 
-print a;
-function();
-print a;
+var test = Test("stinkyyyy");
+test.printFart();
