@@ -55,6 +55,5 @@ typedef struct
 
 void initScanner(const char* source);
 Token scanToken();
-static char advance();
 
 #endif  // SCANNER_H
