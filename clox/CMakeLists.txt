@@ -4,4 +4,4 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 
 include_directories(.)
 project(lox VERSION 1.0)
-add_executable(lox main.c debug.c chunk.c memory.c value.c vm.c compiler.c)
+add_executable(lox main.c debug.c chunk.c memory.c value.c vm.c compiler.c scanner.c)
