@@ -39,10 +39,12 @@ void initVM()
 {
     resetStack();
     vm.objects = NULL;
+    initTable(&vm.strings);
 }
 
 void freeVM()
 {
+    freeTable(&vm.strings);
     freeObjects();
 }
 
@@ -142,7 +144,7 @@ static InterpretResult run()
                 break;
             }
             case OP_NIL:
-                push(NIL_VAL());
+                push(NIL_VAL);
                 break;
             case OP_TRUE:
                 push(BOOL_VAL(true));
@@ -151,10 +153,12 @@ static InterpretResult run()
                 push(BOOL_VAL(false));
                 break;
             case OP_EQUAL:
+            {
                 Value b = pop();
                 Value a = pop();
                 push(BOOL_VAL(valuesEqual(a, b)));
                 break;
+            }
             case OP_GREATER:
                 BINARY_OP(BOOL_VAL, >);
                 break;
